@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- =============css file============ -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- ============Remix Icon cdn================ -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <!-- ==================Sakura css====================== -->
+    <link rel="stylesheet" href="sakura.min.css" />
+  </head>
+  <body>
+    <!-- ==========Header=========== -->
+    <header class="header">
+      <nav class="nav">
+        <a href="" class="nav__logo">
+          <i class="ri-ancient-pavilion-line"></i>
+          <span>Temple</span>
+        </a>
+        <div class="nav__menu">
+          <ul class="nav__list">
+            <li>
+              <a href="#" class="nav__link">Home</a>
+            </li>
+            <li>
+              <a href="#" class="nav__link">Location</a>
+            </li>
+            <li>
+              <a href="#" class="nav__link">About</a>
+            </li>
+            <li>
+              <a href="#" class="nav__link">Explore</a>
+            </li>
+            <li>
+              <a href="#" class="nav__link">Contact</a>
+            </li>
+          </ul>
+
+          <div class="close__menu">
+            <i class="ri-close-large-line"></i>
+          </div>
+        </div>
+
+        <div class="open__menu">
+          <i class="ri-apps-line"></i>
+        </div>
+      </nav>
+    </header>
+    <!-- ============Main============= -->
+    <main class="main">
+      <!-- =========Temple container============== -->
+      <div class="temple__container">
+        <img src="assets/img-bg.svg" alt="image" class="bg__img" />
+        <div class="temple__details">
+          <h1 class="temple__title">
+            Welcome To <br />
+            Temple
+          </h1>
+          <p class="temple__description">
+            The temple is an attractive tourist place where you could visit and
+            connect to the pure land of the environment, you will experience
+            peace and harmony.
+          </p>
+          <a href="#" class="btn">Explore Place</a>
+          <img src="assets/lantern-1.svg" class="lantern-1" alt="image" />
+          <img src="assets/lantern-2.svg" class="lantern-2" alt="image" />
+        </div>
+        <div class="temple__images">
+          <img src="assets/img-1.svg" class="img-1" alt="image" />
+          <img src="assets/img-2.svg" class="img-2" alt="image" />
+          <img src="assets/img-3.svg" class="img-3" alt="image" />
+          <img src="assets/img-4.svg" class="img-4" alt="image" />
+          <img src="assets/img-5.svg" class="img-5" alt="image" />
+          <img src="assets/img-6.svg" class="img-6" alt="image" />
+        </div>
+      </div>
+    </main>
+    <div class="sakura-petals"></div>
+    <!-- =============GSAP cdn==================== -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+      integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="sakura.min.js"></script>
+
+    <!-- ==========JavaScript file============== -->
+    <script src="script.js"></script>
+  </body>
+</html>
