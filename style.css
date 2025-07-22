@@ -67,15 +67,19 @@ img {
   padding: 2rem;
 }
 .nav__logo {
-  font-size: 1.2rem;
+  font-size: clamp(1.2rem, 5vw, 1.5rem);
   font-weight: 700;
 }
 .nav__logo > i {
-  font-size: 1.5rem;
+  font-size: clamp(1.4rem, 5vw, 1.8rem);
 }
 
 .nav__list {
   display: flex;
+}
+
+.nav__link {
+  font-size: clamp(1rem, 6vw, 1.12rem);
 }
 
 .close__menu,
@@ -124,10 +128,10 @@ img {
   padding-right: 1rem;
 }
 .temple__title {
-  font-size: 2.8rem;
+  font-size: clamp(2.5rem, 7vw, 5rem);
 }
 .temple__description {
-  font-size: 0.9rem;
+  line-height: 1.5;
   font-weight: var(--font-semibold);
   padding: 1.5rem 0;
   margin-bottom: 1rem;
@@ -137,6 +141,11 @@ img {
   background: var(--gradient-color);
   padding: 1rem 1.5rem;
   border-radius: 0.5rem;
+  transition: 0.4s ease;
+}
+
+.btn:hover {
+  opacity: 0.9;
 }
 
 .lantern-1,
@@ -146,15 +155,35 @@ img {
 }
 
 .lantern-1 {
-  bottom: 8.3rem;
-  right: 1.1rem;
+  bottom: 9.5rem;
+  right: 2rem;
   rotate: 10deg;
+  animation: lantern1 1.5s infinite ease alternate;
 }
 
 .lantern-2 {
   left: 2.5rem;
   bottom: -6rem;
   rotate: -15deg;
+  animation: lantern2 1.5s infinite ease alternate;
+}
+
+@keyframes lantern1 {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: -5deg;
+  }
+}
+
+@keyframes lantern2 {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 5deg;
+  }
 }
 
 .temple__images img {
@@ -168,7 +197,8 @@ img {
 }
 
 /* ============blur navbar=============== */
-.blur {
+.nav.blur::before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -178,6 +208,7 @@ img {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   z-index: -1;
+  pointer-events: none;
 }
 
 .sakura-petals {
@@ -190,8 +221,19 @@ img {
   overflow: hidden;
 }
 
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: var(--text-black);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 2rem;
+  background: var(--gradient-color);
+}
 /* ============Navigation panel for mobile devices=============== */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1023px) {
   .nav__menu {
     position: fixed;
     top: 0;
@@ -230,17 +272,19 @@ img {
 
 /* =========Tablet Devices================ */
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 700px) and (max-width: 1023px) {
   .temple__details {
-    max-width: 420px;
+    max-width: 500px;
     margin: auto;
   }
+
   .temple__images img {
     width: initial;
     right: 0;
   }
 }
 
+/* ===========Laptop Devices=============== */
 @media screen and (min-width: 1024px) and (max-width: 1600px) {
   .close__menu,
   .open__menu {
@@ -248,13 +292,13 @@ img {
   }
 
   .nav {
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding: 3rem;
   }
-
   .nav__list {
-    flex-direction: row;
-    column-gap: 3.5rem;
+    column-gap: 3rem;
+  }
+  .main {
+    height: 968px;
   }
 
   .temple__details {
@@ -262,10 +306,6 @@ img {
     margin: 0;
     max-width: 700px;
     padding-left: 3rem;
-  }
-
-  .temple__title {
-    font-size: 4rem;
   }
 
   .temple__description {
@@ -277,20 +317,22 @@ img {
     width: initial;
   }
   .lantern-1 {
-    bottom: 7.5rem;
-    right: 4rem;
+    bottom: 9rem;
+    right: 5rem;
   }
   .lantern-2 {
     bottom: -6rem;
     left: initial;
     right: 14rem;
   }
+
   .temple__images img {
     width: initial;
     right: 0;
   }
 }
 
+/* ==========Large Devices=============== */
 @media screen and (min-width: 1440px) and (max-width: 1600px) {
   .nav {
     padding: 3rem 6rem;
@@ -298,14 +340,8 @@ img {
   .nav__list {
     column-gap: 5rem;
   }
-  .main {
-    height: 968px;
-  }
   .temple__details {
     padding-left: 6rem;
     max-width: 750px;
-  }
-  .temple__title {
-    font-size: 5rem;
   }
 }
